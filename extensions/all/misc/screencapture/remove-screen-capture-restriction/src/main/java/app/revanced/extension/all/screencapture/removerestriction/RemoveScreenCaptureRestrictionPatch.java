@@ -19,4 +19,11 @@ public final class RemoveScreenCaptureRestrictionPatch {
     public static void setAllowedCapturePolicy(final int capturePolicy) {
         // Ignore request
     }
+    
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    public static AudioAttributes.Builder setUsage(final AudioAttributes.Builder builder, final int usage) {
+        // Force usage to USAGE_MEDIA (1)
+        builder.setUsage(1);  // AudioAttributes.USAGE_MEDIA
+        return builder;
+    }
 }
