@@ -80,4 +80,10 @@ private enum class MethodCall(
         arrayOf("I"),
         "V",
     ),
+    SetUsage(
+        "Landroid/media/AudioAttributes\$Builder;",
+        "setUsage",
+        arrayOf("I"),
+        "Landroid/media/AudioAttributes\$Builder;",
+    ),
 }
