@@ -20,10 +20,14 @@ public final class RemoveScreenCaptureRestrictionPatch {
         // Ignore request
     }
     
-    @RequiresApi(api = Build.VERSION_CODES.Q)
     public static AudioAttributes.Builder setUsage(final AudioAttributes.Builder builder, final int usage) {
         // Force usage to USAGE_MEDIA (1)
-        builder.setUsage(1);  // AudioAttributes.USAGE_MEDIA
+        builder.setUsage(AudioAttributes.USAGE_MEDIA);  // AudioAttributes.USAGE_MEDIA
+        return builder;
+    }
+    
+    public static AudioAttributes.Builder setContentType(final AudioAttributes.Builder builder, final int usage) {
+        builder.setContentType(AudioAttributes.CONTENT_TYPE_MUSIC);
         return builder;
     }
 }
